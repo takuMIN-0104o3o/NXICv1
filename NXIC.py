@@ -25,7 +25,7 @@ mouse_threshold = 3000
 #If the x,y values taken from the mouse are 16 bits each, set to True.
 #If the x,y value does not start from the second byte (the first byte is probably the button input, but there is an unnecessary byte after it), enter the number of bytes to be skipped in the offset.
 xy_is_16bit = True
-xy_offset = 0
+xy_offset = 3
 
 #If the byte signifying the button press is not the first, enter the number of bytes to be skipped in the offset.
 button_offset = 0
@@ -113,8 +113,8 @@ def get_mouse_input():
         else:
             bnext = False
         if xy_is_16bit:
-            nonsigx = (buf[1+xy_offset] << 8) | buf[2+xy_offset]
-            nonsigy = (buf[3+xy_offset] << 8) | buf[4+xy_offset]
+            nonsigx = (buf[-1+xy_offset] << 8) | buf[0+xy_offset]
+            nonsigy = (buf[1+xy_offset] << 8) | buf[2+xy_offset]
             x = (int(nonsigx^0xffff) * -1)-1 if (nonsigx & 0x8000) else int(nonsigx)
             y = (int(nonsigy^0xffff) * -1)-1 if (nonsigy & 0x8000) else int(nonsigy)
         else:
