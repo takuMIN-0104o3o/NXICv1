@@ -152,14 +152,14 @@ def input_response():
     while True:
         buf = bytearray.fromhex(initial_input)
         buf[2] = 0x00
-        if keyboard.is_pressed('l') or bnext:
+        if keyboard.is_pressed('b') or bprev:
             #A
             #print("A")
             buf[1] |= 0x08
-        if keyboard.is_pressed('k') or bprev:
+        if keyboard.is_pressed('space') or bright:
             #B
             buf[1] |= 0x04
-        if keyboard.is_pressed('i'):
+        if keyboard.is_pressed('g') or bmiddle:
             #X
             buf[1] |= 0x02
         #y button hold
@@ -168,13 +168,13 @@ def input_response():
                 y_hold = False
             else:
                 y_hold = True
-        if keyboard.is_pressed('j') or y_hold:
+        if keyboard.is_pressed('f') or y_hold:
             #Y
             buf[1] |= 0x01
-        if keyboard.is_pressed('f'):
+        if keyboard.is_pressed('r'):
             #DUP
             buf[3] |= 0x02
-        elif keyboard.is_pressed('v'):
+        elif keyboard.is_pressed('t'):
             #DDOWN
             buf[3] |= 0x01
         if keyboard.is_pressed('c'):
@@ -183,13 +183,13 @@ def input_response():
         elif keyboard.is_pressed('b'):
             #DRIGHT
             buf[3] |= 0x04
-        if keyboard.is_pressed('h'):
+        if keyboard.is_pressed('escape'):
             #HOME
             buf[2] |= 0x10
-        if keyboard.is_pressed('u'):
+        if keyboard.is_pressed('2'):
             #PLUS
             buf[2] |= 0x02
-        if keyboard.is_pressed('t'):
+        if keyboard.is_pressed('1'):
             #MINUS
             buf[2] |= 0x01
         if keyboard.is_pressed('g'):
@@ -198,22 +198,22 @@ def input_response():
         if keyboard.is_pressed('q'):
             #LCLICK
             buf[2] |= 0x08
-        if keyboard.is_pressed('r'):
+        if keyboard.is_pressed('4'):
             #L
             buf[3] |= 0x40
-        if keyboard.is_pressed('e'):
+        if keyboard.is_pressed('shift') or keyboard.is_pressed('3'):
             #ZL
             buf[3] |= 0x80
-        if bleft:
+        if bleft or keyboard.is_pressed('6'):
             #ZR
             if keyboard.is_pressed('p') and not loopcount:
                 pass
             else:
                 buf[1] |= 0x80
-        if bright:
+        if bnext or keyboard.is_pressed('5'):
             #R
             buf[1] |= 0x40
-        if bmiddle:
+        if keyboard.is_pressed('e'):
             #RSTICK
             buf[2] |= 0x04
         lh = 0x800
