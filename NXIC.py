@@ -143,7 +143,7 @@ def get_mouse_input():
 def calc_gyro():
     global gyrox, gyroy, gyroz, x, y, mouse_threshold
     gyrox = 0
-    gyroy = int((y / mouse_threshold) * 57.3 / 0.7)
+    gyroy = int((y / mouse_threshold) * 57.3 / 0.6)
     gyroz = int(-((x / mouse_threshold) * 57.3 / 0.5))
 
 def get_mouse_and_calc_gyro():
