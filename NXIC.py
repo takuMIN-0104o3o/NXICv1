@@ -118,19 +118,19 @@ def get_mouse_input():
             if (buf[2+xy_offset] > 128):
                 x = (int(nonsigx^0xffff) * -1)-1
                 if(buf[2+xy_offset] < 255):
-                    x = x - abs(int(nonsigx))
+                    x = x - abs(0x8000)
             else :
                 x = int(nonsigx)
                 if(buf[2+xy_offset] > 0):
-                    x = x + abs((int(nonsigx^0xffff) * -1)-1)
+                    x = x + abs(0x8000)
             if (buf[4+xy_offset] > 128):
                 y = (int(nonsigy^0xffff) * -1)-1
                 if(buf[4+xy_offset] < 255):
-                    y = y - abs(int(nonsigy))
+                    y = y - abs(0x8000)
             else :
                 y = int(nonsigy)
                 if(buf[4+xy_offset] > 0):
-                    y = y + abs((int(nonsigy^0xffff) * -1)-1)
+                    y = y + abs(0x8000)
         else:
             x = -(buf[1] & 0b10000000) | (buf[1] & 0b01111111)
             y = -(buf[2] & 0b10000000) | (buf[2] & 0b01111111)
