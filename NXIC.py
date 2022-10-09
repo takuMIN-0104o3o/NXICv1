@@ -152,8 +152,8 @@ def get_mouse_input():
 def calc_gyro():
     global gyrox, gyroy, gyroz, x, y, mouse_threshold
     gyrox = 0
-    gyroy = int((y / mouse_threshold) * 57.3 / 0.6)
-    gyroz = int(-((x / mouse_threshold) * 57.3 / 0.5))
+    gyroy = int((y / mouse_threshold) * 57.3 / 0.4)
+    gyroz = int(-((x / mouse_threshold) * 57.3 / 0.65))
 
 def get_mouse_and_calc_gyro():
     while True:
@@ -319,8 +319,8 @@ def simulate_procon():
                         spi_response(data[11:13], bytes.fromhex('beff3e00f001004000400040fefffeff0800e73be73be73b'))
                     else:
                         print("Unknown SPI address:", data[11:13].hex())
-                else:
-                    print('>>> [UART]', data.hex())
+                #else:
+                    #print('>>> [UART]', data.hex())
             elif data[0] == 0x10 and len(data) == 10:
                 pass
             else:
