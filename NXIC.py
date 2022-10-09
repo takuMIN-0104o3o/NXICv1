@@ -115,22 +115,31 @@ def get_mouse_input():
         if xy_is_16bit:
             nonsigx = (buf[1+xy_offset] << 8) | buf[2+xy_offset]
             nonsigy = (buf[3+xy_offset] << 8) | buf[4+xy_offset]
+            #print("buf[1+xy_offset] << 8 -> " + str(buf[1+xy_offset] << 8))
+            #print("buf[2+xy_offset] -> " + str(buf[2+xy_offset]))
+            #print("nonsigx -> " + str(nonsigx))
+            #print("buf[3+xy_offset] << 8 -> " + str(buf[3+xy_offset] << 8))
+            #print("buf[4+xy_offset] -> " + str(buf[4+xy_offset]))
+            #print("nonsigy -> " + str(nonsigy))
             if (buf[2+xy_offset] > 128):
-                x = (int(nonsigx^0xffff) * -1)-1
+                x = (int(nonsigx^0xffff) * -1)-1 #left
                 if(buf[2+xy_offset] < 255):
-                    x = x - abs(0x8000)
+                    x = x - abs(0xffff * (255 - buf[2+xy_offset]))
             else :
-                x = int(nonsigx)
+                x = int(nonsigx) # right
                 if(buf[2+xy_offset] > 0):
-                    x = x + abs(0x8000)
+                    x = x + abs((0xffff * buf[2+xy_offset]))
             if (buf[4+xy_offset] > 128):
-                y = (int(nonsigy^0xffff) * -1)-1
+                y = (int(nonsigy^0xffff) * -1)-1 # up
                 if(buf[4+xy_offset] < 255):
-                    y = y - abs(0x8000)
+                    y = y - abs(0xffff * (255 - buf[4+xy_offset]))
             else :
-                y = int(nonsigy)
+                y = int(nonsigy) # dpwm
                 if(buf[4+xy_offset] > 0):
-                    y = y + abs(0x8000)
+                    y = y + abs((0xffff * buf[4+xy_offset]))
+            #print("x -> " + str(x))
+            #print("gyroz -> " + str(int(-((x / mouse_threshold) * 57.3 / 0.5))))
+            #print("y -> " + str(y))
         else:
             x = -(buf[1] & 0b10000000) | (buf[1] & 0b01111111)
             y = -(buf[2] & 0b10000000) | (buf[2] & 0b01111111)
