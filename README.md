@@ -62,6 +62,7 @@ OS の起動に時間がかかるのでうまくいっても20秒程度要しま
 
 ### DEMO
 ![demo](https://github.com/sakkuntyo/NXIC/blob/main/nxic-sakkuntyo.gif)
+https://www.youtube.com/watch?v=p048VY5oUCk
 #### すぺしゃるさんくす
 [mzyy94](https://www.mzyy94.com/blog/2020/03/20/nintendo-switch-pro-controller-usb-gadget/)
 
