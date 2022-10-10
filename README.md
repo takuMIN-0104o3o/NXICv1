@@ -7,28 +7,10 @@ NX Input Converterとは,キーボード・マウスの入力をRaspberry piを�
 
 ## 操作方法
 デフォルトでは以下の操作に変換されます.
-| キーボード・マウス | Proコン |
-----|---- 
-| L | A |
-| K | B |
-| I | X |
-| J | Y |
-| Y | Y Button Hold |
-| R | L |
-| E | ZL |
-| Q | Lclick |
-| WASD | Lstick |
-| ↑←↓→ | Rstick |
-| FCVB | hat |
-| U | start(+) |
-| T | select(-) |
-| H | home |
-| G | capture |
-| mouse left click | ZR |
-| mouse right click | R |
-| mouse wheel click | Rclick |
-| P + mouse left click | ZR(Rapid) |
-| mouse move | Gyro |
+
+![image](https://user-images.githubusercontent.com/20591351/194797237-021abfa5-48d1-4952-ba1a-d7a5f0e9b25e.png)![2022-10-10_12h58_52](https://user-images.githubusercontent.com/20591351/194797893-f78976f2-d0f7-45a0-a9e1-5deb4ae73451.png)
+
+
 ### DEMO
 ![demo](https://cdn.discordapp.com/attachments/730426864442671154/960466699533029406/demo4.gif)
 #### すぺしゃるさんくす
