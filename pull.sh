@@ -1,2 +1,2 @@
 cd $(dirname $0)
-git pull
+/usr/bin/git pull
