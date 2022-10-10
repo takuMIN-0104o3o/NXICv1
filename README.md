@@ -41,7 +41,9 @@ sudo /usr/bin/python /root/NXIC/NXIC.py
 
 ## 自動起動
 1. 次のコマンドを実行
+```
 echo "@reboot root /root/NXIC/add_procon_gadget.sh;/usr/bin/python /root/NXIC/NXIC.py" | sudo tee /etc/crontab
+```
 
 2. ラズパイ4 を 黒い USB ジャック(USB2.0) が左に来る様に置いた状態で
 
