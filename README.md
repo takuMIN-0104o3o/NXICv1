@@ -12,6 +12,7 @@ NX Input Converterとは,キーボード・マウスの入力をRaspberry piを�
 
 ## 注意点
 ラズベリーパイ 3 では非対応 (USB Gadget API に非対応)
+
 ラズベリーパイ 4 を使っています
 
 ### DEMO
