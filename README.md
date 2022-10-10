@@ -66,3 +66,5 @@ OS の起動に時間がかかるのでうまくいっても20秒程度要しま
 [mzyy94](https://www.mzyy94.com/blog/2020/03/20/nintendo-switch-pro-controller-usb-gadget/)
 
 [Bokuchin](https://qiita.com/Bokuchin/items/7fee2c6a04c97dde29b4)
+
+[mizuyoukanao](https://note.com/gamewagashi/n/n47ee6a6cf337)
