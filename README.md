@@ -13,27 +13,40 @@ NX Input Converterとは,キーボード・マウスの入力をRaspberry piを�
 
 ## 使い方
 1. ラズパイ4 に RasberryPi OS (64bit) をインストールします。
+
 2. セットアップ
+
 2.1 ログインして以下コマンドを実行
+```
 echo "dtoverlay=dwc2" | sudo tee -a /boot/config.txt
 echo "dwc2" | sudo tee -a /etc/modules
 echo "libcomposite" | sudo tee -a /etc/modules
 sudo python -m pip install joycon-python hid pyglm keyboard
 sudo apt install git -y
 sudo git clone https://github.com/sakkuntyo/NXIC.git /root/NXIC
+```
+
 3. 起動方法
+
 3.1 ラズパイを Switch からの電源で起動する
+
 3.2 マウス、キーボードの順番で接続
+
 3.3 次のコマンドを実行
+```
 sudo /root/NXIC/add_procon_gadget.sh
 sudo /usr/bin/python /root/NXIC/NXIC.py
+```
 4. マウスで操作できる様になっているハズ
 
 ## 自動起動
 1. 次のコマンドを実行
 echo "@reboot root /root/NXIC/add_procon_gadget.sh;/usr/bin/python /root/NXIC/NXIC.py" | sudo tee /etc/crontab
+
 2. ラズパイ4 を 黒い USB ジャック(USB2.0) が左に来る様に置いた状態で
+
 青い USB ジャック (USB3.0) に上がマウス、下がキーボードとなる様に接続
+
 3. Switch から給電され、OS が起動すると自動的にマウスとキーボードがコントローラになります。
 OS の起動に時間がかかるのでうまくいっても20秒程度要します。
 
