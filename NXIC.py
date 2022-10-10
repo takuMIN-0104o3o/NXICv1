@@ -245,6 +245,13 @@ def input_response():
         lv = 0x800
         rh = 0x800
         rv = 0x800
+        # 半角全角
+        if keyboard.is_pressed('`'):
+            disconnect_response()
+            os.system('echo > /sys/kernel/config/usb_gadget/procon/UDC')
+            os.system('ls /sys/class/udc > /sys/kernel/config/usb_gadget/procon/UDC')
+            time.sleep(0.5)
+            os._exit(1)
         if keyboard.is_pressed('w'):
             lv = 0xFFF
         elif keyboard.is_pressed('s'):
