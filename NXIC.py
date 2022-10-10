@@ -138,7 +138,9 @@ def get_mouse_input():
                 if(buf[4+xy_offset] > 0):
                     y = y + abs((0xffff * buf[4+xy_offset]))
             #print("x -> " + str(x))
-            #print("gyroz -> " + str(int(-((x / mouse_threshold) * 57.3 / 0.5))))
+            #print("gyroz  -> " + str(int(-((x / mouse_threshold) * 57.3 / 0.5))))
+            #print("gyroz >> 8 -> " + str(gyroz >> 8))
+            #print("gyroz >> 8 & 0xff  -> " + str((gyroz >> 8) & 0xff))
             #print("y -> " + str(y))
         else:
             x = -(buf[1] & 0b10000000) | (buf[1] & 0b01111111)
@@ -159,7 +161,7 @@ def get_mouse_and_calc_gyro():
     while True:
         get_mouse_input()
         calc_gyro()
-        time.sleep(1/60)
+        time.sleep(1/65)
 
 def botoru():
     global loopcount
@@ -229,7 +231,7 @@ def input_response():
             buf[3] |= 0x80
         if bleft or keyboard.is_pressed('6'):
             #ZR
-            if keyboard.is_pressed('p') and not loopcount:
+            if keyboard.is_pressed('ctrl') and not loopcount:
                 pass
             else:
                 buf[1] |= 0x80
@@ -276,7 +278,8 @@ def input_response():
         sixaxis[11] = sixaxis[23] = sixaxis[35] = (gyroz >> 8) & 0xff
         buf.extend(sixaxis)
         response(0x30, counter, buf)
-        time.sleep(1/125)
+        time.sleep(1/200)
+
 
 def simulate_procon():
     while True:
@@ -319,8 +322,8 @@ def simulate_procon():
                         spi_response(data[11:13], bytes.fromhex('beff3e00f001004000400040fefffeff0800e73be73be73b'))
                     else:
                         print("Unknown SPI address:", data[11:13].hex())
-                #else:
-                    #print('>>> [UART]', data.hex())
+                else:
+                    print('>>> [UART]', data.hex())
             elif data[0] == 0x10 and len(data) == 10:
                 pass
             else:
