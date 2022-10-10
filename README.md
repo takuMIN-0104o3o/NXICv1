@@ -8,7 +8,7 @@ NX Input Converterとは,キーボード・マウスの入力をRaspberry piを�
 ## 操作方法
 デフォルトでは以下の操作に変換されます.
 
-![image](https://user-images.githubusercontent.com/20591351/194797237-021abfa5-48d1-4952-ba1a-d7a5f0e9b25e.png)![2022-10-10_12h58_52](https://user-images.githubusercontent.com/20591351/194797893-f78976f2-d0f7-45a0-a9e1-5deb4ae73451.png)
+![image](https://user-images.githubusercontent.com/20591351/194798467-49783a53-4885-420e-9c14-cc8621d646ff.png)![2022-10-10_12h58_52](https://user-images.githubusercontent.com/20591351/194797893-f78976f2-d0f7-45a0-a9e1-5deb4ae73451.png)
 
 
 ### DEMO
