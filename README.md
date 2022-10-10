@@ -61,7 +61,7 @@ OS の起動に時間がかかるのでうまくいっても20秒程度要しま
 ラズベリーパイ 4 を使っています
 
 ### DEMO
-![demo](https://cdn.discordapp.com/attachments/730426864442671154/960466699533029406/demo4.gif)
+![demo](https://github.com/sakkuntyo/NXIC/blob/main/nxic-sakkuntyo.gif)
 #### すぺしゃるさんくす
 [mzyy94](https://www.mzyy94.com/blog/2020/03/20/nintendo-switch-pro-controller-usb-gadget/)
 
