@@ -193,6 +193,9 @@ def input_response():
                 y_hold = False
             else:
                 y_hold = True
+        if keyboard.is_pressed('v'):
+            #B
+            buf[1] |= 0x04
         if keyboard.is_pressed('f') or y_hold:
             #Y
             buf[1] |= 0x01
