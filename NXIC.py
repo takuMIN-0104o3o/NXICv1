@@ -217,7 +217,7 @@ def input_response():
         if keyboard.is_pressed('1'):
             #MINUS
             buf[2] |= 0x01
-        if keyboard.is_pressed('g'):
+        if keyboard.is_pressed('z'):
             #CAPTURE
             buf[2] |= 0x20
         if keyboard.is_pressed('q'):
