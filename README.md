@@ -38,6 +38,10 @@ sudo git clone https://github.com/sakkuntyo/NXIC.git /root/NXIC
 ```
 sudo /root/NXIC/add_procon_gadget.sh
 sudo /usr/bin/python /root/NXIC/NXIC.py
+
+sudo sh ./add_procon_gadget.sh
+sudo ./NXIC.py
+
 ```
 4. マウスで操作できる様になっているハズ
 
